@@ -1,13 +1,14 @@
 import { Suspense, useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Environment, Stars } from '@react-three/drei'
+import { OrbitControls, Stars } from '@react-three/drei'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import ParticleField from '../../three/ParticleField'
 import PhoneMockup from '../../three/PhoneMockup'
 import { useTypingEffect } from '../../hooks/useTypingEffect'
+import data from '../../data/portfolio.json'
 
-const TYPING_WORDS = ['BLoC Architect', 'Live Streaming Dev', 'Clean Code Engineer', 'Firebase Expert']
+const { hero, meta } = data
 
 function HeroCanvas() {
   return (
@@ -40,7 +41,7 @@ function HeroCanvas() {
 }
 
 export default function Hero() {
-  const typedText = useTypingEffect(TYPING_WORDS, 75, 45, 2200)
+  const typedText = useTypingEffect(hero.typingWords, 75, 45, 2200)
   const headingRef = useRef(null)
   const subtitleRef = useRef(null)
 
@@ -95,22 +96,22 @@ export default function Hero() {
             >
               <span className="w-2 h-2 rounded-full bg-green-400 pulse-dot" />
               <span className="font-mono text-xs text-white/60 tracking-wider">
-                Available for Projects
+                {hero.availableBadge}
               </span>
             </motion.div>
 
             {/* Name */}
             <div ref={headingRef}>
               <h1 className="font-syne font-black text-5xl md:text-7xl xl:text-8xl leading-none mb-4">
-                <span className="block text-white">Muhammed</span>
-                <span className="block gradient-text text-glow-cyan">Sahal</span>
+                <span className="block text-white">{meta.firstName}</span>
+                <span className="block gradient-text text-glow-cyan">{meta.lastName}</span>
               </h1>
             </div>
 
             {/* Role */}
             <div ref={subtitleRef}>
               <p className="font-mono text-base md:text-lg text-white/50 mb-2 tracking-wide">
-                Flutter Developer · Mobile Engineer
+                {meta.role}
               </p>
 
               {/* Typing effect */}
@@ -129,11 +130,7 @@ export default function Hero() {
                 transition={{ delay: 1, duration: 0.6 }}
                 className="flex gap-8 mb-10"
               >
-                {[
-                  { value: '5+', label: 'Years Flutter' },
-                  { value: '20+', label: 'Projects' },
-                  { value: 'Codewave', label: 'Current Co.' },
-                ].map((stat) => (
+                {hero.stats.map((stat) => (
                   <div key={stat.label}>
                     <div className="font-syne font-bold text-2xl gradient-text">{stat.value}</div>
                     <div className="font-mono text-xs text-white/30 tracking-wider">{stat.label}</div>
@@ -149,20 +146,20 @@ export default function Hero() {
                 className="flex flex-wrap gap-4"
               >
                 <button
-                  onClick={() => scrollTo('projects')}
+                  onClick={() => scrollTo(hero.cta.primary.target)}
                   className="group relative px-7 py-3.5 rounded-xl font-mono text-sm font-medium overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-[#00e5ff] to-[#7b61ff] transition-opacity" />
                   <span className="relative text-[#0a0a0a] font-semibold group-hover:text-white transition-colors">
-                    View Projects →
+                    {hero.cta.primary.label}
                   </span>
                 </button>
 
                 <button
-                  onClick={() => scrollTo('contact')}
+                  onClick={() => scrollTo(hero.cta.secondary.target)}
                   className="px-7 py-3.5 rounded-xl font-mono text-sm border border-white/15 text-white/70 hover:text-white hover:border-white/30 transition-all duration-200 backdrop-blur-sm"
                 >
-                  Contact Me
+                  {hero.cta.secondary.label}
                 </button>
               </motion.div>
             </div>
@@ -187,7 +184,7 @@ export default function Hero() {
 
       {/* Corner decoration */}
       <div className="absolute top-32 right-6 md:right-12 font-mono text-[10px] text-white/15 tracking-widest rotate-90 origin-top-right hidden md:block">
-        FLUTTER DEVELOPER · MOBILE ENGINEER · CLEAN ARCHITECTURE
+        {meta.cornerLabel}
       </div>
     </section>
   )

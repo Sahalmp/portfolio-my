@@ -6,6 +6,9 @@ import SectionHeading from '../shared/SectionHeading'
 import AboutOrb from './AboutOrb'
 import InteractiveBackground from './InteractiveBackground'
 import CodeSnake from './CodeSnake'
+import data from '../../data/portfolio.json'
+
+const { about } = data
 
 function StatCard({ value, suffix, label, delay, start }) {
   const count = useCountUp(value, 2000, start)
@@ -24,12 +27,6 @@ function StatCard({ value, suffix, label, delay, start }) {
     </motion.div>
   )
 }
-
-const specialties = [
-  'Flutter', 'Dart', 'BLoC', 'Riverpod', 'Provider',
-  'Node.js', 'Django', 'Python', 'MySQL', 'MongoDB',
-  'AWS EC2', 'CI/CD', 'OpenAI API', 'REST APIs',
-]
 
 export default function About() {
   const ref = useRef(null)
@@ -51,9 +48,9 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto">
         <SectionHeading
-          tag="// about.me"
+          tag={about.sectionTag}
           title={<>Who I <span className="gradient-text">Am</span></>}
-          subtitle="Flutter developer crafting exceptional mobile experiences"
+          subtitle={about.sectionSubtitle}
         />
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -98,40 +95,41 @@ export default function About() {
             {/* Available badge */}
             <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full border border-green-400/20 bg-green-400/5">
               <span className="w-2 h-2 rounded-full bg-green-400 pulse-dot" />
-              <span className="font-mono text-xs text-green-400 tracking-wider">Available for Freelance</span>
+              <span className="font-mono text-xs text-green-400 tracking-wider">{about.availableBadge}</span>
             </div>
 
             <h3 className="font-syne font-bold text-2xl md:text-3xl text-white mb-4">
-              Building mobile experiences that{' '}
+              {about.heading.split('scale & perform')[0]}
               <span className="gradient-text">scale & perform</span>
             </h3>
 
             <p className="font-mono text-sm text-white/50 leading-relaxed mb-6">
-              Senior Flutter Developer with 5+ years of experience building scalable,
-              high-performance mobile applications for iOS and Android. Specialized in Flutter
-              architecture, state management (BLoC, Riverpod, Provider), and building smooth,
-              production-grade user experiences.
+              {about.bio[0]}
             </p>
 
             <p className="font-mono text-sm text-white/40 leading-relaxed mb-8">
-              Experienced in integrating REST APIs, real-time services, and AI-powered features
-              into modern mobile apps. Also skilled in backend development using Node.js (Express)
-              and Django, working with MySQL and MongoDB, and managing CI/CD pipelines and
-              end-to-end app store deployments.
+              {about.bio[1]}
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-3 mb-8">
-              <StatCard value={5} suffix="+" label="Years Flutter" delay={0.1} start={inView} />
-              <StatCard value={20} suffix="+" label="Projects" delay={0.2} start={inView} />
-              <StatCard value={3} suffix="" label="Companies" delay={0.3} start={inView} />
+              {about.stats.map((stat, i) => (
+                <StatCard
+                  key={stat.label}
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  label={stat.label}
+                  delay={(i + 1) * 0.1}
+                  start={inView}
+                />
+              ))}
             </div>
 
             {/* Skill Tags */}
             <div>
               <div className="font-mono text-xs text-white/30 tracking-widest mb-3">SPECIALTIES</div>
               <div className="flex flex-wrap gap-2">
-                {specialties.map((skill, i) => (
+                {about.specialties.map((skill, i) => (
                   <motion.span
                     key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}
