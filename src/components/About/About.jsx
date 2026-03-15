@@ -1,9 +1,11 @@
-import { Suspense, useRef, useState } from 'react'
+import { Suspense, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { motion, useInView } from 'framer-motion'
 import { useCountUp } from '../../hooks/useCountUp'
 import SectionHeading from '../shared/SectionHeading'
 import AboutOrb from './AboutOrb'
+import InteractiveBackground from './InteractiveBackground'
+import CodeSnake from './CodeSnake'
 
 function StatCard({ value, suffix, label, delay, start }) {
   const count = useCountUp(value, 2000, start)
@@ -35,6 +37,15 @@ export default function About() {
 
   return (
     <section id="about" className="section-padding bg-[#0a0a0a] relative overflow-hidden">
+      {/* Interactive particle background */}
+      <InteractiveBackground />
+      <CodeSnake />
+
+      {/* Hint label */}
+      <div className="absolute bottom-6 right-6 font-mono text-[10px] text-white/15 tracking-widest pointer-events-none z-10 hidden md:block">
+        MOUSE / ↑↓←→ TO PLAY
+      </div>
+
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#7b61ff]/5 rounded-full blur-3xl pointer-events-none" />
 
