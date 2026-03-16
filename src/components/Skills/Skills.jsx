@@ -46,7 +46,7 @@ function SkillCategoryCard({ category, items, isActive, onClick }) {
     <motion.div
       whileHover={{ scale: 1.02 }}
       onClick={onClick}
-      className={`glass rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
+      className={`glass rounded-2xl p-4 sm:p-6 cursor-pointer transition-all duration-300 ${
         isActive ? 'gradient-border' : 'border border-white/5'
       }`}
     >
@@ -139,7 +139,7 @@ export default function Skills() {
         />
 
         {/* 3D Orbs Canvas */}
-        <div className="h-80 md:h-96 mb-12 relative rounded-3xl overflow-hidden glass border border-white/5">
+        <div className="h-56 sm:h-80 md:h-96 mb-12 relative rounded-3xl overflow-hidden glass border border-white/5">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0a0a]/60 z-10 pointer-events-none" />
           <Suspense fallback={
             <div className="h-full flex items-center justify-center">
@@ -173,7 +173,7 @@ export default function Skills() {
           <div className="font-mono text-xs text-white/30 tracking-widest mb-4 text-center">
             HOVER CARDS TO FLIP
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-10 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10 gap-3">
             {skillOrbs.map((orb) => (
               <OrbCard
                 key={orb.name}

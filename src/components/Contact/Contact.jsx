@@ -119,8 +119,8 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding bg-[#0a0a0a] relative overflow-hidden">
       {/* Background */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#7b61ff]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#00e5ff]/4 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[200px] sm:h-[300px] md:h-[400px] bg-[#7b61ff]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-48 sm:w-96 h-48 sm:h-96 bg-[#00e5ff]/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         <SectionHeading
@@ -129,7 +129,7 @@ export default function Contact() {
           subtitle="Available for freelance projects, collaborations, and consulting"
         />
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left: Info + Social */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -138,7 +138,7 @@ export default function Contact() {
             transition={{ duration: 0.7 }}
           >
             {/* 3D Envelope Canvas */}
-            <div className="h-64 mb-8 rounded-2xl overflow-hidden glass border border-white/5">
+            <div className="h-48 sm:h-64 mb-8 rounded-2xl overflow-hidden glass border border-white/5">
               <Suspense fallback={null}>
                 <Canvas camera={{ position: [0, 0, 5], fov: 45 }} gl={{ alpha: true }}>
                   <ambientLight intensity={0.3} />

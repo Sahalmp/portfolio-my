@@ -18,9 +18,9 @@ function StatCard({ value, suffix, label, delay, start }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className="glass rounded-2xl p-4 text-center gradient-border"
+      className="glass rounded-2xl p-3 sm:p-4 text-center gradient-border"
     >
-      <div className="font-syne font-black text-3xl gradient-text">
+      <div className="font-syne font-black text-2xl sm:text-3xl gradient-text">
         {count}{suffix}
       </div>
       <div className="font-mono text-xs text-white/40 mt-1 tracking-wider">{label}</div>
@@ -53,14 +53,14 @@ export default function About() {
           subtitle={about.sectionSubtitle}
         />
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* 3D Visual */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="h-64 md:h-96 relative"
+            className="h-56 sm:h-72 md:h-96 relative"
           >
             <Suspense fallback={null}>
               <Canvas camera={{ position: [0, 0, 5], fov: 45 }} gl={{ alpha: true }}>

@@ -44,10 +44,10 @@ function ProjectCard({ project, index }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className="relative group cursor-pointer min-w-[300px] md:min-w-0"
+      className="relative group cursor-pointer"
     >
       <div
-        className={`relative glass rounded-2xl p-6 h-full transition-all duration-300 ${
+        className={`relative glass rounded-2xl p-4 sm:p-6 h-full transition-all duration-300 ${
           hovered ? 'border-transparent' : 'border border-white/5'
         }`}
         style={{

@@ -73,8 +73,8 @@ export default function Hero() {
     <section id="hero" className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
       {/* Radial gradient background */}
       <div className="absolute inset-0 bg-gradient-radial from-[#7b61ff]/10 via-transparent to-transparent" />
-      <div className="absolute top-1/4 -left-40 w-96 h-96 bg-[#00e5ff]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-[#7b61ff]/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-20 sm:-left-40 w-48 sm:w-96 h-48 sm:h-96 bg-[#00e5ff]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-20 sm:-right-40 w-48 sm:w-96 h-48 sm:h-96 bg-[#7b61ff]/8 rounded-full blur-3xl pointer-events-none" />
 
       {/* Three.js Canvas */}
       <div className="absolute inset-0">
@@ -102,7 +102,7 @@ export default function Hero() {
 
             {/* Name */}
             <div ref={headingRef}>
-              <h1 className="font-syne font-black text-5xl md:text-7xl xl:text-8xl leading-none mb-4">
+              <h1 className="font-syne font-black text-4xl sm:text-5xl md:text-7xl xl:text-8xl leading-none mb-4">
                 <span className="block text-white">{meta.firstName}</span>
                 <span className="block gradient-text text-glow-cyan">{meta.lastName}</span>
               </h1>
@@ -128,7 +128,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6 }}
-                className="flex gap-8 mb-10"
+                className="flex flex-wrap gap-5 sm:gap-8 mb-10"
               >
                 {hero.stats.map((stat) => (
                   <div key={stat.label}>
@@ -147,7 +147,7 @@ export default function Hero() {
               >
                 <button
                   onClick={() => scrollTo(hero.cta.primary.target)}
-                  className="group relative px-7 py-3.5 rounded-xl font-mono text-sm font-medium overflow-hidden"
+                  className="group relative w-full sm:w-auto px-7 py-3.5 rounded-xl font-mono text-sm font-medium overflow-hidden text-center"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-[#00e5ff] to-[#7b61ff] transition-opacity" />
                   <span className="relative text-[#0a0a0a] font-semibold group-hover:text-white transition-colors">
@@ -157,7 +157,7 @@ export default function Hero() {
 
                 <button
                   onClick={() => scrollTo(hero.cta.secondary.target)}
-                  className="px-7 py-3.5 rounded-xl font-mono text-sm border border-white/15 text-white/70 hover:text-white hover:border-white/30 transition-all duration-200 backdrop-blur-sm"
+                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-mono text-sm border border-white/15 text-white/70 hover:text-white hover:border-white/30 transition-all duration-200 backdrop-blur-sm text-center"
                 >
                   {hero.cta.secondary.label}
                 </button>

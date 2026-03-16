@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function SectionHeading({ tag, title, subtitle }) {
   return (
-    <div className="text-center mb-16">
+    <div className="text-center mb-10 sm:mb-16">
       {tag && (
         <motion.span
           initial={{ opacity: 0, y: 10 }}
@@ -19,7 +19,7 @@ export default function SectionHeading({ tag, title, subtitle }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="font-syne font-bold text-3xl md:text-5xl text-white mb-4"
+        className="font-syne font-bold text-2xl sm:text-3xl md:text-5xl text-white mb-4"
       >
         {title}
       </motion.h2>

@@ -143,7 +143,13 @@ body::before {
 
 /* Section spacing */
 .section-padding {
-  padding: 6rem 1.5rem;
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 5rem 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {

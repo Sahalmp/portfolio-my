@@ -3,7 +3,7 @@
     "name": "Muhammed Sahal",
     "firstName": "Muhammed",
     "lastName": "Sahal",
-    "role": "Flutter Developer · Mobile Engineer",
+    "role": "Flutter Developer · Mobile Engineer · Full Stack ",
     "email": "sahal2050@gmail.com",
     "available": true,
     "availableText": "Available for Freelance",
@@ -11,7 +11,6 @@
     "tagline": "Flutter developer crafting exceptional mobile experiences",
     "cornerLabel": "FLUTTER DEVELOPER · MOBILE ENGINEER · CLEAN ARCHITECTURE"
   },
-
   "hero": {
     "typingWords": [
       "BLoC Architect",
@@ -21,16 +20,30 @@
     ],
     "availableBadge": "Available for Projects",
     "stats": [
-      { "value": "5+", "label": "Years Flutter" },
-      { "value": "20+", "label": "Projects" },
-      { "value": "Codewave", "label": "Current Co." }
+      {
+        "value": "5+",
+        "label": "Years Flutter"
+      },
+      {
+        "value": "20+",
+        "label": "Projects"
+      },
+      {
+        "value": "Codewave",
+        "label": "Current Co."
+      }
     ],
     "cta": {
-      "primary": { "label": "View Projects →", "target": "projects" },
-      "secondary": { "label": "Contact Me", "target": "contact" }
+      "primary": {
+        "label": "View Projects →",
+        "target": "projects"
+      },
+      "secondary": {
+        "label": "Contact Me",
+        "target": "contact"
+      }
     }
   },
-
   "about": {
     "sectionTag": "// about.me",
     "sectionTitle": "Who I Am",
@@ -42,24 +55,52 @@
       "Experienced in integrating REST APIs, real-time services, and AI-powered features into modern mobile apps. Also skilled in backend development using Node.js (Express) and Django, working with MySQL and MongoDB, and managing CI/CD pipelines and end-to-end app store deployments."
     ],
     "stats": [
-      { "value": 5, "suffix": "+", "label": "Years Flutter" },
-      { "value": 20, "suffix": "+", "label": "Projects" },
-      { "value": 3, "suffix": "", "label": "Companies" }
+      {
+        "value": 5,
+        "suffix": "+",
+        "label": "Years Flutter"
+      },
+      {
+        "value": 20,
+        "suffix": "+",
+        "label": "Projects"
+      },
+      {
+        "value": 3,
+        "suffix": "",
+        "label": "Companies"
+      }
     ],
     "specialties": [
-      "Flutter", "Dart", "BLoC", "Riverpod", "Provider",
-      "Node.js", "Django", "Python", "MySQL", "MongoDB",
-      "AWS EC2", "CI/CD", "OpenAI API", "REST APIs"
+      "Flutter",
+      "Dart",
+      "BLoC",
+      "Riverpod",
+      "Provider",
+      "Node.js",
+      "Django",
+      "Python",
+      "MySQL",
+      "MongoDB",
+      "AWS EC2",
+      "CI/CD",
+      "OpenAI API",
+      "REST APIs"
     ]
   },
-
   "projects": [
     {
       "id": 1,
       "name": "AI Chat Bot",
       "category": "AI / Mobile",
       "description": "Conversational AI chatbot built with Flutter, powered by OpenAI models. Natural language understanding, context-aware responses, and a polished mobile UI with smooth animations.",
-      "tech": ["Flutter", "OpenAI API", "Node.js", "Express", "MongoDB"],
+      "tech": [
+        "Flutter",
+        "OpenAI API",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
       "color": "#00e5ff",
       "featured": true
     },
@@ -68,7 +109,13 @@
       "name": "Real-Time Analytics Dashboard",
       "category": "Enterprise",
       "description": "Cross-platform analytics dashboard with live data streaming. Built at Bitroot — real-time KPI tracking, interactive charts, and multi-device support across iOS, Android, and web.",
-      "tech": ["Flutter", "BLoC", "Node.js", "MySQL", "REST API"],
+      "tech": [
+        "Flutter",
+        "BLoC",
+        "Node.js",
+        "MySQL",
+        "REST API"
+      ],
       "color": "#7b61ff",
       "featured": true
     },
@@ -77,7 +124,13 @@
       "name": "Multi-Platform Mobile App",
       "category": "Cross-Platform",
       "description": "Full-featured cross-platform application running on iOS, Android, and web from a single Flutter codebase. Complex state management with Provider, BLoC, and Riverpod patterns.",
-      "tech": ["Flutter", "Riverpod", "BLoC", "Provider", "Node.js"],
+      "tech": [
+        "Flutter",
+        "Riverpod",
+        "BLoC",
+        "Provider",
+        "Node.js"
+      ],
       "color": "#00e5ff",
       "featured": false
     },
@@ -86,7 +139,13 @@
       "name": "CI/CD Pipeline System",
       "category": "DevOps",
       "description": "Automated CI/CD pipeline for Flutter apps — build, test, and deploy to App Store & Play Store. Integrated with GitHub Actions, custom scripts, and environment management.",
-      "tech": ["Flutter", "GitHub Actions", "Fastlane", "AWS EC2", "Shell"],
+      "tech": [
+        "Flutter",
+        "GitHub Actions",
+        "Fastlane",
+        "AWS EC2",
+        "Shell"
+      ],
       "color": "#7b61ff",
       "featured": false
     },
@@ -95,7 +154,13 @@
       "name": "CRM Web Application",
       "category": "Web / Backend",
       "description": "Customer relationship management system built with Django. Contact management, activity tracking, pipeline views, reporting, and cloud hosting on AWS EC2.",
-      "tech": ["Django", "Python", "MySQL", "HTML/CSS", "AWS EC2"],
+      "tech": [
+        "Django",
+        "Python",
+        "MySQL",
+        "HTML/CSS",
+        "AWS EC2"
+      ],
       "color": "#00e5ff",
       "featured": false
     },
@@ -104,7 +169,13 @@
       "name": "Custom Widget Library",
       "category": "Flutter / Open Source",
       "description": "Collection of production-ready Flutter widgets reused across multiple projects. Includes OTP input, country picker, custom timers, dropdown overlays, and animated skill bars.",
-      "tech": ["Flutter", "Dart", "BLoC", "Provider", "Riverpod"],
+      "tech": [
+        "Flutter",
+        "Dart",
+        "BLoC",
+        "Provider",
+        "Riverpod"
+      ],
       "color": "#7b61ff",
       "featured": false
     },
@@ -113,52 +184,143 @@
       "name": "Serverless REST API",
       "category": "Backend",
       "description": "Scalable serverless REST API backend powering mobile applications. Built with Node.js/Express on AWS, MongoDB for data, authentication, real-time endpoints, and auto-scaling.",
-      "tech": ["Node.js", "Express", "MongoDB", "AWS EC2", "REST API"],
+      "tech": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "AWS EC2",
+        "REST API"
+      ],
       "color": "#00e5ff",
       "featured": false
     }
   ],
-
   "skills": {
     "Mobile": [
-      { "name": "Flutter", "level": 80 },
-      { "name": "Dart", "level": 80 },
-      { "name": "BLoC / Riverpod / Provider", "level": 78 },
-      { "name": "Custom Animations", "level": 75 }
+      {
+        "name": "Flutter",
+        "level": 80
+      },
+      {
+        "name": "Dart",
+        "level": 80
+      },
+      {
+        "name": "BLoC / Riverpod / Provider",
+        "level": 78
+      },
+      {
+        "name": "Custom Animations",
+        "level": 75
+      }
     ],
     "Backend": [
-      { "name": "Node.js / Express", "level": 70 },
-      { "name": "Django / Python", "level": 60 },
-      { "name": "MySQL", "level": 80 },
-      { "name": "MongoDB", "level": 65 }
+      {
+        "name": "Node.js / Express",
+        "level": 70
+      },
+      {
+        "name": "Django / Python",
+        "level": 60
+      },
+      {
+        "name": "MySQL",
+        "level": 80
+      },
+      {
+        "name": "MongoDB",
+        "level": 65
+      }
     ],
     "Web": [
-      { "name": "HTML / CSS", "level": 80 },
-      { "name": "JavaScript", "level": 50 },
-      { "name": "Bootstrap", "level": 60 },
-      { "name": "REST APIs", "level": 75 }
+      {
+        "name": "HTML / CSS",
+        "level": 80
+      },
+      {
+        "name": "JavaScript",
+        "level": 50
+      },
+      {
+        "name": "Bootstrap",
+        "level": 60
+      },
+      {
+        "name": "REST APIs",
+        "level": 75
+      }
     ],
     "DevOps": [
-      { "name": "AWS EC2", "level": 65 },
-      { "name": "CI/CD Pipelines", "level": 70 },
-      { "name": "App Store Deployment", "level": 78 },
-      { "name": "Git / GitHub Actions", "level": 75 }
+      {
+        "name": "AWS EC2",
+        "level": 65
+      },
+      {
+        "name": "CI/CD Pipelines",
+        "level": 70
+      },
+      {
+        "name": "App Store Deployment",
+        "level": 78
+      },
+      {
+        "name": "Git / GitHub Actions",
+        "level": 75
+      }
     ]
   },
-
   "skillOrbs": [
-    { "name": "Flutter", "icon": "🦋", "color": "#00e5ff" },
-    { "name": "Dart", "icon": "🎯", "color": "#7b61ff" },
-    { "name": "BLoC", "icon": "🧱", "color": "#00e5ff" },
-    { "name": "Node.js", "icon": "⚡", "color": "#68a063" },
-    { "name": "Django", "icon": "🐍", "color": "#092e20" },
-    { "name": "Python", "icon": "🐍", "color": "#3776ab" },
-    { "name": "MySQL", "icon": "🗄️", "color": "#4479a1" },
-    { "name": "MongoDB", "icon": "🍃", "color": "#47a248" },
-    { "name": "AWS EC2", "icon": "☁️", "color": "#ff9500" },
-    { "name": "OpenAI", "icon": "🤖", "color": "#00e5ff" }
+    {
+      "name": "Flutter",
+      "icon": "🦋",
+      "color": "#00e5ff"
+    },
+    {
+      "name": "Dart",
+      "icon": "🎯",
+      "color": "#7b61ff"
+    },
+    {
+      "name": "BLoC",
+      "icon": "🧱",
+      "color": "#00e5ff"
+    },
+    {
+      "name": "Node.js",
+      "icon": "⚡",
+      "color": "#68a063"
+    },
+    {
+      "name": "Django",
+      "icon": "🐍",
+      "color": "#092e20"
+    },
+    {
+      "name": "Python",
+      "icon": "🐍",
+      "color": "#3776ab"
+    },
+    {
+      "name": "MySQL",
+      "icon": "🗄️",
+      "color": "#4479a1"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "🍃",
+      "color": "#47a248"
+    },
+    {
+      "name": "AWS EC2",
+      "icon": "☁️",
+      "color": "#ff9500"
+    },
+    {
+      "name": "OpenAI",
+      "icon": "🤖",
+      "color": "#00e5ff"
+    }
   ],
-
   "componentLibrary": [
     {
       "name": "OTP Input",
@@ -197,7 +359,6 @@
       "icon": "📊"
     }
   ],
-
   "experience": [
     {
       "year": "2023 – Present",
@@ -246,7 +407,6 @@
       ]
     }
   ],
-
   "social": [
     {
       "name": "GitHub",

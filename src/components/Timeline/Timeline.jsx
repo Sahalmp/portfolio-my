@@ -14,14 +14,14 @@ function TimelineItem({ item, index }) {
   const isLeft = index % 2 === 0
 
   return (
-    <div className={`relative flex items-start gap-6 md:gap-0 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} mb-12`}>
+    <div className={`relative flex items-start gap-6 md:gap-0 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} mb-8 md:mb-12`}>
       {/* Content */}
       <motion.div
         initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
-        className={`w-full md:w-5/12 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}
+        className={`w-full md:w-5/12 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12'} min-w-0`}
       >
         <div className="glass rounded-2xl p-5 border border-white/5 hover:border-white/10 transition-all duration-300 group">
           {/* Year badge */}
@@ -107,7 +107,7 @@ export default function Timeline() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-6 mb-16"
+          className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-12 sm:mb-16"
         >
           {[
             { icon: '🏢', value: 'Codewave', label: 'Current Employer' },
@@ -117,7 +117,7 @@ export default function Timeline() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="flex items-center gap-3 glass rounded-xl px-5 py-3 border border-white/5"
+              className="flex items-center gap-2 sm:gap-3 glass rounded-xl px-3 sm:px-5 py-2 sm:py-3 border border-white/5"
             >
               <span className="text-xl">{stat.icon}</span>
               <div>
