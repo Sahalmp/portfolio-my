@@ -38,11 +38,10 @@ function InputField({ label, type = 'text', name, required }) {
   return (
     <div className="relative">
       <label
-        className={`absolute left-4 font-mono text-xs transition-all duration-200 pointer-events-none ${
-          focused || value
+        className={`absolute left-4 font-mono text-xs transition-all duration-200 pointer-events-none ${focused || value
             ? 'top-2 text-[10px] text-[#00e5ff]'
             : 'top-4 text-white/30'
-        }`}
+          }`}
       >
         {label}
       </label>
@@ -74,11 +73,10 @@ function TextAreaField({ label, name, required }) {
   return (
     <div className="relative">
       <label
-        className={`absolute left-4 font-mono text-xs transition-all duration-200 pointer-events-none ${
-          focused || value
+        className={`absolute left-4 font-mono text-xs transition-all duration-200 pointer-events-none ${focused || value
             ? 'top-2 text-[10px] text-[#00e5ff]'
             : 'top-4 text-white/30'
-        }`}
+          }`}
       >
         {label}
       </label>
@@ -203,6 +201,19 @@ export default function Contact() {
                 </motion.a>
               ))}
             </div>
+
+            {data.meta.calendly && (
+              <div className="mt-8">
+                <a
+                  href={data.meta.calendly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full px-6 py-4 rounded-xl font-mono text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-[#00e5ff]/10 to-[#7b61ff]/10 border border-[#00e5ff]/30 hover:border-[#00e5ff]/60 hover:bg-[#00e5ff]/20 text-white gap-3"
+                >
+                  📅 Schedule a Meeting
+                </a>
+              </div>
+            )}
           </motion.div>
 
           {/* Right: Contact Form */}

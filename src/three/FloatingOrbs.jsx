@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Text, Billboard } from '@react-three/drei'
 import * as THREE from 'three'
@@ -7,20 +7,39 @@ function Orb({ position, label, color, speed, radius }) {
   const meshRef = useRef()
   const groupRef = useRef()
 
+  const [hovered, setHovered] = useState(false)
+
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime() * speed
     if (groupRef.current) {
-      groupRef.current.position.x = position[0] + Math.sin(t + position[0]) * radius
-      groupRef.current.position.y = position[1] + Math.cos(t * 0.7 + position[1]) * radius * 0.6
+      if (hovered) {
+        groupRef.current.scale.lerp(new THREE.Vector3(2.5, 2.5, 2.5), 0.1)
+      } else {
+        groupRef.current.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1)
+        groupRef.current.position.x = position[0] + Math.sin(t + position[0]) * radius
+        groupRef.current.position.y = position[1] + Math.cos(t * 0.7 + position[1]) * radius * 0.6
+      }
     }
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.01
-      meshRef.current.rotation.x += 0.005
+      meshRef.current.rotation.y += hovered ? 0.03 : 0.01
+      meshRef.current.rotation.x += hovered ? 0.015 : 0.005
     }
   })
 
   return (
-    <group ref={groupRef} position={position}>
+    <group 
+      ref={groupRef} 
+      position={position}
+      onPointerOver={(e) => {
+        e.stopPropagation()
+        setHovered(true)
+        document.body.style.cursor = 'pointer'
+      }}
+      onPointerOut={() => {
+        setHovered(false)
+        document.body.style.cursor = 'auto'
+      }}
+    >
       <mesh ref={meshRef}>
         <icosahedronGeometry args={[0.22, 1]} />
         <meshStandardMaterial

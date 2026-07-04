@@ -111,9 +111,9 @@ export default function Timeline() {
         >
           {[
             { icon: '🏢', value: 'Codewave', label: 'Current Employer' },
-            { icon: '⚡', value: '5+ Years', label: 'Flutter Dev' },
-            { icon: '📱', value: '15+ Apps', label: 'Delivered' },
-            { icon: '🎓', value: 'BSc CS', label: 'MES College' },
+            { icon: '⚡', value: '4+ Years', label: 'Flutter Dev' },
+            { icon: '📱', value: '10+ Apps', label: 'Delivered' },
+            { icon: '🎓', value: 'BSc CS', label: 'Kannur Univ.' },
           ].map((stat) => (
             <div
               key={stat.label}

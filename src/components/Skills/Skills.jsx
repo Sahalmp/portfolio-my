@@ -46,9 +46,8 @@ function SkillCategoryCard({ category, items, isActive, onClick }) {
     <motion.div
       whileHover={{ scale: 1.02 }}
       onClick={onClick}
-      className={`glass rounded-2xl p-4 sm:p-6 cursor-pointer transition-all duration-300 ${
-        isActive ? 'gradient-border' : 'border border-white/5'
-      }`}
+      className={`glass rounded-2xl p-4 sm:p-6 cursor-pointer transition-all duration-300 ${isActive ? 'gradient-border' : 'border border-white/5'
+        }`}
     >
       <div className="flex items-center gap-3 mb-5">
         <div

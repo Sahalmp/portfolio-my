@@ -143,24 +143,40 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.1, duration: 0.6 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-col gap-5"
               >
-                <button
-                  onClick={() => scrollTo(hero.cta.primary.target)}
-                  className="group relative w-full sm:w-auto px-7 py-3.5 rounded-xl font-mono text-sm font-medium overflow-hidden text-center"
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#00e5ff] to-[#7b61ff] transition-opacity" />
-                  <span className="relative text-[#0a0a0a] font-semibold group-hover:text-white transition-colors">
-                    {hero.cta.primary.label}
-                  </span>
-                </button>
+                <p className="font-mono text-sm md:text-base text-white/60 tracking-wide max-w-lg">
+                  Want to discuss a project or opportunity? Book a time with me.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <button
+                    onClick={() => scrollTo(hero.cta.primary.target)}
+                    className="group relative w-full sm:w-auto px-7 py-3.5 rounded-xl font-mono text-sm font-medium overflow-hidden text-center"
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#00e5ff] to-[#7b61ff] transition-opacity" />
+                    <span className="relative text-[#0a0a0a] font-semibold group-hover:text-white transition-colors">
+                      {hero.cta.primary.label}
+                    </span>
+                  </button>
 
-                <button
-                  onClick={() => scrollTo(hero.cta.secondary.target)}
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-mono text-sm border border-white/15 text-white/70 hover:text-white hover:border-white/30 transition-all duration-200 backdrop-blur-sm text-center"
-                >
-                  {hero.cta.secondary.label}
-                </button>
+                  <button
+                    onClick={() => scrollTo(hero.cta.secondary.target)}
+                    className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-mono text-sm border border-white/15 text-white/70 hover:text-white hover:border-white/30 transition-all duration-200 backdrop-blur-sm text-center"
+                  >
+                    {hero.cta.secondary.label}
+                  </button>
+
+                  {meta.calendly && (
+                    <a
+                      href={meta.calendly}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-mono text-sm border border-[#00e5ff]/30 text-[#00e5ff] hover:bg-[#00e5ff]/10 transition-all duration-200 text-center flex items-center justify-center gap-2"
+                    >
+                      📅 Let's Connect
+                    </a>
+                  )}
+                </div>
               </motion.div>
             </div>
           </div>
